@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #F0F1F3;
+  color: #1C2A39;
+}
+
+.doc-field {
+  display: flex;
+  border-bottom: 1px dotted #b9b2a0;
+  padding: 4px 0;
+  font-size: 12.5px;
+}
+.doc-field .l { color: #5a6470; width: 42%; flex-shrink: 0; }
+.doc-field .v { font-weight: 600; }
+
+.doc-tests {
+  columns: 2;
+  column-gap: 20px;
+  font-size: 12.5px;
+}
+.doc-test { break-inside: avoid; padding: 2px 0; }
+
+@media print {
+  body * { visibility: hidden; }
+  #a4-preview, #a4-preview * { visibility: visible; }
+  #a4-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: none !important;
+    margin: 0 !important;
+    width: 210mm;
+    min-height: 297mm;
+  }
+  .no-print { display: none !important; }
+}
